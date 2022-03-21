@@ -14,7 +14,7 @@
 #define LOWER   1
 #define RAISE   2
 #define CONTROL 3
-#define BLUET	4
+#define BLUET		4
 
 / {
     conditional_layers {
@@ -31,20 +31,20 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// COLEMAK DH primary layout
+// BuT primary layout
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  F    |  P   |   B   |                                          |   J   |  L    |  U    |  Y   |   ;   | BkSp |
-// |  CTRL |  A  |  R  |  S    |  T   |   G   |                                          |   M   |  N    |  E    |  I   |   O   | ENT  |
-// | SHIFT |  Z  |  X  |  C    |  D   |   V   |  BkSp   |  L GUI  |  |  R GUI  |   TAB   |   K   |  H    |  ,    |  .   |   /   | SHFT |
-//                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
+// |  MUTE  |  B  |  U  |  .    |  ,   |   Ü     |                                           	|   P     |  C    |  L    |  M   |   F   | TAB  |
+// |  ß     |  H  |  I  |  E    |  A   |   O     |                                           	|   D     |  T    |  R    |  N   |   S   |  X   |
+// | SHIFT  |  K  |  Y  |  Ö    |  Ä   |   Q     |  LOWER   |  L GUI  |  |  R GUI  |   RAISE   	|   J     |  G    |  W    |  V   |   Z   | SHFT |
+//                      | CONTR | ALT  | CONTROL |  SPACE   |  ENTER  |  |  BkSp   |  SPACE  	| CONTROL | RCTL  | BLUET |
 			bindings = <
-	&kp C_MUTE &kp B &kp U &kp DOT &kp COMMA &kp LBKT                                       &kp P &kp C  &kp L     	&kp M   &kp F 	&kp BSPC
-	&kp MINUS  &kp H &kp I &kp E &kp A &kp O                                                &kp D &kp T  &kp R     	&kp N   &kp S   &kp X
-	&kp LSHFT  &kp K &kp Z &kp SEMI &kp SQT &kp Q &kp BSPC  &kp LGUI      &kp RGUI &kp TAB  &kp J &kp G  &kp W 		&kp V 	&kp Y 	&kp RSHFT
-	              &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	&kp C_MUTE 	&kp B 	&kp U 		&kp DOT 	&kp COMMA 	&kp LBKT                                       						&kp P 		&kp C  		&kp L   	&kp M   &kp F 	&kp TAB
+	&kp MINUS  	&kp H 	&kp I 		&kp E 		&kp A 		&kp O                                          						&kp D 		&kp T  		&kp R   	&kp N   &kp S   &kp X
+	&kp LSHFT  	&kp K	&kp Z 		&kp SEMI 	&kp SQT 	&kp Q 		&mo LOWER  	&kp LGUI      	&kp RGUI 	&mo RAISE  		&kp J 		&kp G  		&kp W 		&kp V 	&kp Y 	&kp RSHFT
+	        						&trans 		&kp LALT 	&mo CONTROL &kp SPACE 	&kp ENTER   	&kp BkSp 	&kp SPACE 		&mo CONTROL &kp RCTRL 	&mo BLUET
 			>;
 
-			sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp LEFT RIGHT>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 
 		lower_layer {
@@ -80,7 +80,6 @@
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
 		};
-
 		control_layer {
 // Game / right hand nav
 // ---------------------------------------------------------------------------------------------------------------------------------
