@@ -33,15 +33,15 @@
 		default_layer {
 // BuT primary layout
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  MUTE  |  B  |  U  |  .    |  ,   |   Ü     |                                           	|   P     |  C    |  L    |  M   |   F   | TAB  |
+// |  MUTE  |  B  |  U  |  .    |  ,   |   Ü     |                                           	|   P     |  C    |  L    |  M   |   F   | ESC  |
 // |  ß     |  H  |  I  |  E    |  A   |   O     |                                           	|   D     |  T    |  R    |  N   |   S   |  X   |
 // | SHIFT  |  K  |  Y  |  Ö    |  Ä   |   Q     |  LOWER   |  L GUI  |  |  R GUI  |   RAISE   	|   J     |  G    |  W    |  V   |   Z   | SHFT |
-//                      | CONTR | ALT  | CONTROL |  SPACE   |  ENTER  |  |  BkSp   |  SPACE  	| CONTROL | RCTL  | BLUET |
+//                      | trans | ALT  | CONTROL |  SPACE   |  TAB  |  |  ENTER  |   BkSp  	| CONTROL | RCTL  | BLUET |
 			bindings = <
-	&kp C_MUTE 	&kp B 	&kp U 		&kp DOT 	&kp COMMA 	&kp LBKT                                       						&kp P 		&kp C  		&kp L   	&kp M   &kp F 	&kp TAB
+	&kp C_MUTE 	&kp B 	&kp U 		&kp DOT 	&kp COMMA 	&kp LBKT                                       						&kp P 		&kp C  		&kp L   	&kp M   &kp F 	&kp ESC
 	&kp MINUS  	&kp H 	&kp I 		&kp E 		&kp A 		&kp O                                          						&kp D 		&kp T  		&kp R   	&kp N   &kp S   &kp X
 	&kp LSHFT  	&kp K	&kp Z 		&kp SEMI 	&kp SQT 	&kp Q 		&mo LOWER  	&kp LGUI      	&kp RGUI 	&mo RAISE  		&kp J 		&kp G  		&kp W 		&kp V 	&kp Y 	&kp RSHFT
-	        						&trans 		&kp LALT 	&mo CONTROL &kp SPACE 	&kp ENTER   	&kp BSPC 	&kp SPACE 		&mo CONTROL &kp RCTRL 	&mo BLUET
+	        						&trans 		&kp LALT 	&mo CONTROL &kp SPACE 	&kp TAB   		&kp ENTER 	&kp BSPC 		&mo CONTROL &kp RCTRL 	&mo BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -50,30 +50,30 @@
 		lower_layer {
 // Number layer
 // ---------------------------------------------------------------------------------------------------------------------------------
-// 	| trans | trans | trans | trans | trans | trans |                                      |   /   |  7    |  8    	|  9   |	-  	|  ^   |
+// 	| trans | trans | trans | SPACE | trans | trans |                                      |   /   |  7    |  8    	|  9   |	-  	|  ^   |
 // 	| trans | trans | trans | trans | trans | trans |                                      |   *   |  4    |  5    	|  6   |	+	|  (   |
 // 	| trans | trans | trans | trans | trans | trans |  LOWER  | trans |  | trans |  ENTER  |   =   |  1    |  2    	|  3   |	%	|  )   |
 //                     		| trans | trans | trans |  trans  | trans |  | trans |  SPACE  |   0   |  .    | ,		|
 			bindings = <
-	&trans  &trans &trans	&trans	&trans	&trans                                                 		&kp FSLH 		&kp KP_N7 		&kp KP_N8 	&kp KP_N9	&kp KP_MINUS 	&kp CARET
-	&trans  &trans &trans	&trans	&trans  &trans                                                 		&kp KP_MULTIPLY &kp KP_N4 		&kp KP_N5 	&kp KP_N6 	&kp KP_PLUS 	&kp KP_LPAR
-	&trans  &trans &trans	&trans	&trans	&trans		&mo LOWER 	&trans		&trans		&kp ENTER 	&kp KP_EQUAL 	&kp KP_N1 		&kp KP_N2 	&kp KP_N3  	&kp PERCENT  	&kp KP_RPAR
-	                     	&trans	&trans	&trans 		&trans 		&trans		&kp BSPC	&kp SPACE 	&kp KP_N0 		&kp KP_DOT 		&kp KP_COMMA
+	&trans  &trans &trans	&kp SPACE	&trans	&trans                                                 		&kp FSLH 		&kp KP_N7 		&kp KP_N8 	&kp KP_N9	&kp KP_MINUS 	&kp CARET
+	&trans  &trans &trans	&trans	    &trans  &trans                                                 		&kp KP_MULTIPLY &kp KP_N4 		&kp KP_N5 	&kp KP_N6 	&kp KP_PLUS 	&kp KP_LPAR
+	&trans  &trans &trans	&trans	    &trans	&trans		&mo LOWER 	&trans		&trans		&trans 	    &kp KP_EQUAL 	&kp KP_N1 		&kp KP_N2 	&kp KP_N3  	&kp PERCENT  	&kp KP_RPAR
+	                     	&trans	    &trans	&trans 		&trans 		&trans		&kp ENTER   &kp BSPC 	&kp KP_N0 		&kp KP_DOT 		&kp KP_COMMA
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		raise_layer {
-// Symbols and basic navigation
+// Navigation layer
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  | ESC |  W  | PgUp  |  ~   |   B   |                                          |   &   |  *    |  (    |  )   |   [   | NmLk |
-// |  CTRL |  A  | HME | PgDn  | END  |   G   |                                          |   $   |  %    |  ^    |  '   |   ]   | Caps |
+// |  TAB  | ESC |  UP  | PgUp  |  ~   |   B   |                                          |   &   |  *    |  (    |  )   |   [   | NmLk |
+// |  CTRL |  LEFT  | DOWN | RIGHT  | END  |   G   |                                          |   $   |  %    |  ^    |  '   |   ]   | Caps |
 // | SHIFT |  Z  |  /  |  -    |  =   |   V   |  DEL    |  L GUI  |  |  INSERT |   TAB   |   !   |  @    |  #    | PrSc | ScrLk | SHFT |
 //                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
 			bindings = <
-	&kp TAB    &kp ESC &kp W    &kp PG_UP &kp GRAVE &kp B                                         &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp LBKT &kp KP_NUM
-	&kp LCTRL  &kp A   &kp HOME &kp PG_DN &kp END   &kp G                                         &kp DLLR &kp PRCNT &kp CARET &kp APOS  &kp RBKT &kp CAPS
+	&kp TAB    &kp ESC 		&kp UP    	&kp PG_UP &kp GRAVE &kp B                                         &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp LBKT &kp KP_NUM
+	&kp LCTRL  &kp LEFT  	&kp DOWN 	&kp RIGHT &kp END   &kp G                                         &kp DLLR &kp PRCNT &kp CARET &kp APOS  &kp RBKT &kp CAPS
 	&kp LSHFT  &kp Z   &kp FSLH &kp MINUS &kp EQUAL &kp V &kp DEL &kp LGUI   &kp INS     &kp TAB  &kp EXCL &kp AT    &kp HASH  &kp PSCRN &kp SLCK &kp RSHFT
 	                   &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER   &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
 			>;
@@ -83,15 +83,15 @@
 		control_layer {
 // Game / right hand nav
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  T  |  Q  |  W    |  E   |   R   |                                          |   J   | HOME  |  UP   |  END  | PgUp  | BkSp |
-// |  CTRL |  G  |  A  |  S    |  D   |   F   |                                          |   M   | LEFT  | DOWN  | RIGHT | PgDn  | ENT  |
+// |  TAB  |  T  |  Q  |  W    |  E   |   R   |                                          |   J   | )  |  ]   |  END  | PgUp  | BkSp |
+// |  CTRL |  G  |  A  |  S    |  D   |   F   |                                          |   M   | (  | [   | RIGHT | PgDn  | ENT  |
 // | SHIFT |  5  |  4  |  3    |  2   |   1   |    6    |  L GUI  |  |  R GUI  |   TAB   |   K   |  H    |  ,    |  .    |   /   | SHFT |
 //                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
 			bindings = <
-	&kp TAB    &kp T  &kp Q  &kp W  &kp E  &kp R                                                &kp J &kp HOME &kp UP    &kp END   &kp PG_UP &kp BSPC
-	&kp LCTRL  &kp G  &kp A  &kp S  &kp D  &kp F                                                &kp M &kp LEFT &kp DOWN  &kp RIGHT &kp PG_DN &kp ENTER
-	&kp LSHFT  &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp N6    &kp LGUI          &kp RGUI &kp TAB  &kp K &kp H    &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-	              &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	&kp TAB    &kp T  &kp Q  &kp W  &kp E  &kp R                                                &kp LBRC &kp RPAR &kp RBKT  &kp RT   &kp PG_UP &kp BSPC
+	&kp LCTRL  &kp G  &kp A  &kp S  &kp D  &kp F                                                &kp RBRC &kp LPAR &kp LBKT  &kp LT   &kp PG_DN &kp ENTER
+	&kp LSHFT  &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp N6    &kp LGUI      &kp RGUI &kp TAB  &kp K &kp H    &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+	              &tog CONTROL &kp LALT &mo CONTROL &kp SPACE &kp TAB     &kp ENTER &kp BSPC &mo CONTROL &kp RCTRL &tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
