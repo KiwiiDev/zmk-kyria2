@@ -88,10 +88,10 @@
 // | SHIFT |  5  |  4  |  3    |  2   |   1   |    6    |  L GUI  |  |  R GUI  |   TAB   |   K   |  H    |  ,    |  .    |   /   | SHFT |
 //                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
 			bindings = <
-	&kp TAB    &kp T  &kp Q  &kp W  &kp E  &kp R                                                &kp LBRC &kp RPAR &kp RBKT  &kp RT   &kp PG_UP &kp BSPC
-	&kp LCTRL  &kp G  &kp A  &kp S  &kp D  &kp F                                                &kp RBRC &kp LPAR &kp LBKT  &kp LT   &kp PG_DN &kp ENTER
-	&kp LSHFT  &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp N6    &kp LGUI      &kp RGUI &kp TAB  &kp K &kp H    &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-	              &tog CONTROL &kp LALT &mo CONTROL &kp SPACE &kp TAB     &kp ENTER &kp BSPC &mo CONTROL &kp RCTRL &tog BLUET
+	&kp TAB    &kp T  &kp Q  &kp W  &kp E  &kp R                                                &kp LBRC 	&kp RPAR 	&kp RBKT  &kp GT   	&kp PG_UP &kp BSPC
+	&kp LCTRL  &kp G  &kp A  &kp S  &kp D  &kp F                                                &kp RBRC 	&kp LPAR 	&kp LBKT  &kp LT   	&kp PG_DN &kp ENTER
+	&kp LSHFT  &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp N6    &kp LGUI      &kp RGUI  &kp TAB  	&kp K 		&kp H    	&kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+	              &tog CONTROL &kp LALT &mo CONTROL &kp SPACE &kp TAB     &kp ENTER &kp BSPC 	&mo CONTROL &kp RCTRL 	&tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
