@@ -18,16 +18,6 @@
 #define BLUET	4
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 3>;
-            then-layer = <4>;
-        };
-    };
-};
-
-/ {
 	keymap {
 		compatible = "zmk,keymap";
 
