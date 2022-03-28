@@ -72,17 +72,17 @@
 			sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
 		};
 		control_layer {
-// Game / right hand nav
+// Symbol layer
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  T  |  Q  |  W    |  E   |   R   |                                          |   }  | )  |  ]   |  >  | PgUp  | BkSp |
-// |  CTRL |  G  |  A  |  S    |  D   |   F   |                                          |   {   | (  | [   | < | PgDn  | ENT  |
-// | SHIFT |  5  |  4  |  3    |  2   |   1   |    6    |  L GUI  |  |  R GUI  |   TAB   |   K   |  H    |  ,    |  .    |   /   | SHFT |
-//                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
+// | Lock  |     |  _  |   :   |   \   |    *  	|                                          	|   }   | )  |  ]   |  >  |  ?  |  ˚	|
+// |    ~  |  +  |  -  |   ;   |   /   |    #  	|                                          	|   {   | (  |  [   |  <  |  !  |  ´	|
+// | SHIFT |  %  |  @  |   =   |   |   |    &	|  COPY  |  CUT  	|  |  R GUI  |  Paste 	|   `   |  ' |  "   |  %  |  ^  |  `	|
+//                     | L GUI |  ALT  |  CONTR |  SPACE  |  TAB	|  |  ENTER  |  BkSp  	| CONTR | RCTL  | CONTR |
 			bindings = <
-	&kp TAB    &trans  &kp Q  &kp EQUAL  &kp EXCL  &kp R                                                &kp RBRC 	&kp RPAR 	&kp RBKT  &kp GT   	&kp PG_UP &kp BSPC
-	&kp LCTRL  &trans  &kp A  &kp SEMI  &kp FSLH  &kp F                                                &kp LBRC 	&kp LPAR 	&kp LBKT  &kp LT   	&kp PG_DN &kp ENTER
-	&kp LSHFT  &trans &trans &trans &trans &trans &kp N6    &kp LGUI      &kp RGUI  &kp TAB  	&kp EXCL 		&kp AT    	&kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-	              &tog CONTROL &kp LALT &mo CONTROL &kp SPACE &kp TAB     &kp ENTER &kp BSPC 	&mo CONTROL &kp RCTRL 	&tog BLUET
+	&kp C_AL_LOCK		&none		&kp UNDER 	&kp COLON  		&kp BSLH  	&kp STAR                                              							&kp RBRC 	&kp RPAR 	&kp RBKT  	&kp GT   	&kp QMARK 	&kp RA(N7)
+	&kp TILDE  	&kp PLUS  	&kp MINUS  	&kp SEMI  		&kp FSLH  	&kp HASH                                            							&kp LBRC 	&kp LPAR 	&kp LBKT  	&kp LT   	&kp EXCL  	&kp RA(SQT) 
+	&kp LSHFT  	&kp	PRCNT 	&kp AT      &kp EQUAL 	    &kp PIPE 	&kp AMPS  	&kp C_AC_COPY   &kp C_AC_CUT      	&kp RGUI  	&kp C_AC_PASTE  	&kp GRAVE  	&kp SQT     &kp DQT		&kp DLLR  	&kp CARET  	&kp RA(GRAVE)
+	              						&kp LGUI  		&kp LALT 	&mo CONTROL &kp SPACE 		&kp TAB    			&kp ENTER 	&kp BSPC 			&mo CONTROL &kp RCTRL 	&tog CONTROL
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
