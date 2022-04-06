@@ -26,13 +26,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  MUTE  |  B  |  U  |  .    |  ,   |   Ü     |                                           	|   P     |  C    |  L    |  M   |   F   | ESC  |
 // |  ß     |  H  |  I  |  E    |  A   |   O     |                                           	|   D     |  T    |  R    |  N   |   S   |  X   |
-// | SHIFT  |  K  |  Y  |  Ö    |  Ä   |   Q     |  LOWER   |  L GUI  |  |  R GUI  |   RAISE   	|   J     |  G    |  W    |  V   |   Z   | SHFT |
-//                      | trans | ALT  | CONTROL |  SPACE   |  TAB  |  |  ENTER  |   BkSp  	| CONTROL | RCTL  | BLUET |
+// | SHIFT  |  K  |  Y  |  Ö    |  Ä   |   Q     |  LOWER   |  L GUI  |  |  R GUI  |   RCTL   	|   J     |  G    |  W    |  V   |   Z   | SHFT |
+//                      | LCTL | ALT  | CONTROL |  SPACE   |  TAB  |  |  ENTER  |   BkSp  	| CONTROL | RAISE  | BLUET |
 			bindings = <
 	&kp C_MUTE 	&kp B 	&kp U 		&kp DOT 	&kp COMMA 	&kp RA(U)                                       						&kp P 		&kp C  		&kp L   	&kp M   &kp F 	&kp ESC
-	&kp RA(S)  	&kp H 	&kp I 		&kp E 		&kp A 		&kp O                                          						&kp D 		&kp T  		&kp R   	&kp N   &kp S   &kp X
-	&kp LSHFT  	&kp K	&kp Y 		&kp RA(O) 	&kp RA(A) 	&kp Q 		&mo LOWER  	&kp LGUI      	&kp RGUI 	&mo RAISE  		&kp J 		&kp G  		&kp W 		&kp V 	&kp Z 	&kp RSHFT
-	        						&trans 		&kp LALT 	&mo CONTROL &kp SPACE 	&kp TAB   		&kp ENTER 	&kp BSPC 		&mo CONTROL &kp RCTRL 	&tog BLUET
+	&kp RA(S)  	&kp H 	&kp I 		&kp E 		&kp A 		&kp O                                          							&kp D 		&kp T  		&kp R   	&kp N   &kp S   &kp X
+	&kp LSHFT  	&kp K	&kp Y 		&kp RA(O) 	&kp RA(A) 	&kp Q 		&mo LOWER  	&kp LGUI      		&kp RGUI 	&kp RCTRL  		&kp J 		&kp G  		&kp W 		&kp V 	&kp Z 	&kp RSHFT
+	        						&kp LCTRL 		&kp LALT 	&mo CONTROL &kp SPACE 	&kp TAB   		&kp ENTER 	&kp BSPC 		&mo CONTROL &mo RAISE 	&tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -73,6 +73,7 @@
 		};
 		control_layer {
 // Symbol layer
+// Lock works on Mac
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | Lock  |     |  _  |   :   |   \   |    *  	|                                          	|   }   | )  |  ]   |  >  |  ?  |  ˚	|
 // |    ~  |  +  |  -  |   ;   |   /   |    #  	|                                          	|   {   | (  |  [   |  <  |  !  |  ´	|
